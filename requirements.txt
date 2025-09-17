@@ -1,0 +1,9 @@
+PyPDF2
+chromadb
+streamlit
+pyttsx3
+langchain_community
+langchain
+transformers
+os
+faiss_cpu
