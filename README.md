@@ -1,33 +1,42 @@
-# TTS_BY_RAG
-Text to speech using RAG
+TTS_BY_RAG
 
-📘 RAG-Based PDF Q&A System (Offline)
+Text-to-Speech PDF Q&A using RAG
 
 This project is a chatbot for your PDF files.
-It uses RAG (Retrieval-Augmented Generation) to read your documents, understand them, and answer your questions in its own words.
+It uses RAG (Retrieval-Augmented Generation) to:
+
+Read your documents
+
+Understand them
+
+Answer your questions in its own words (not just copy-paste)
+
 
 If you ask something outside the PDF, it will politely say:
 
 > "You are a helpful assistant that answers questions based only on the given context".
 
 
-The app runs offline with a lightweight HuggingFace model and provides a simple Streamlit interface.
+
+The app runs offline with a lightweight HuggingFace model and provides a simple Streamlit interface with text-to-speech (TTS) support.
 
 
+---
 
  Features
 
-Chat with your PDF (ask natural questions)
- Generates answers in its own words (not just copy-paste)
- Rejects unrelated questions
- Speaks answers aloud using text-to-speech
- Offline model (no API key required)
+1.Chat with your PDF (ask natural questions)
+2.Answers are generated (not direct copy-paste)
+3.Rejects unrelated questions politely
+4.Speaks answers aloud using pyttsx3
+5.Fully offline (no API key required)
 
 
+---
 
- Tools Used
+Tools Used
 
-Python – programming language
+Python 3.11.9 – programming language (tested version)
 
 LangChain – connects LLM with ChromaDB and retriever logic
 
@@ -43,7 +52,7 @@ pyttsx3 – converts text answers to speech
 
 ---
 
- Project Structure
+📂 Project Structure
 
 RAG_SYSTEM/
 │── app.py                # Main app (Streamlit interface)
@@ -58,65 +67,73 @@ RAG_SYSTEM/
 
  Step-by-Step Setup Guide
 
-1 Clone the repository
+>  These instructions assume you are using Python 3.11.9. Please make sure you have it installed.
 
-git clone https://github.com/your-username/RAG_SYSTEM.git
-cd RAG_SYSTEM
 
-2 Create a virtual environment
+
+1.Clone the repository
+
+git clone https://github.com/VishwaPriya-Karthikeyan/TTS_BY_RAG/blob/main/README.md
+
+2.Create a virtual environment (inside Python 3.11.9)
 
 python -m venv myenv
+
+Activate it:
+
 myenv\Scripts\activate    # On Windows
 
-3 Install dependencies
+3.Install dependencies
 
 pip install -r requirements.txt
 
-4 Place your PDF
+4.Place your PDF
 
-Put your study notes or any PDF file into the mypdf/ folder.
+Put your study notes or any PDF file inside the mypdf/ folder.
 
-5 Generate embeddings
+5.Generate embeddings
 
-This converts your PDF into vector embeddings for search.
+This step converts your PDF into vector embeddings for search.
 
 python create_embeddings.py
 
-6 Create ChromaDB
+6.Create ChromaDB
 
-Builds and saves the vector database.
+This builds and saves the vector database.
 
 python create_chromadb.py
 
-7 Run the app
+7.Run the app
 
 streamlit run app.py
 
-After this, you’ll see a local link in your terminal.
-Open it in your browser → ask questions to your PDF!
+After running, Streamlit will give you a local URL in the terminal.
+Open it in your browser and start chatting with your PDF 
 
 
+---
 
- Example Usage
+Example Usage
 
- Question (from PDF):
+Q (from PDF):
 
 What are the main types of data in data science?
 
- Answer (generated):
+A (generated):
 
-Data can be structured or unstructured. It is also classified by how it is measured, such as numerical, categorical, or time-series data. These classifications help decide how analysis methods are applied.
+Data can be structured or unstructured. It is also classified by how it is measured, 
+such as numerical, categorical, or time-series data. These classifications help 
+decide how analysis methods are applied.
 
- Question (not in PDF):
+Q (not in PDF):
+"How are you"
 
-Who is BTS?
-
- Answer:
+A:
 
 "You are a helpful assistant that answers questions based only on the given context".
 
 
-
+---
 
  Future Improvements
 
@@ -130,13 +147,14 @@ Better summarization models
 
 
 
-
+---
 
  Author
 
-Developed by Vishwa Priya.K,Sharmila.L,Adhithian.A
+Developed by:
 
+Vishwa Priya K
 
+Sharmila L
 
-
-
+Adhithian A
